@@ -49,5 +49,99 @@ export const PasswordGenerator = () => {
       </label>
     </div>
 
+    <div>
+      <div>
+        <label>
+          Less Secure
+          <input
+            type="radio"
+          />
+        </label>
+        <p>Only Letters</p>
+      </div>
+      <div>
+        <label>
+          Less Secure
+          <input
+            type="radio"
+          />
+        </label>
+        <p>Only Letters</p>
+      </div>
+      <div>
+        <label>
+          Somewhat Secure
+          <input
+            type="radio"
+          />
+        </label>
+        <p>Letters and digits</p>
+      </div>
+      <div>
+        <label>
+          More Secure
+          <input
+            type="radio"
+          />
+        </label>
+        <p>Letters, digits, special, groupings</p>
+      </div>
+
+    </div>
+
+    <div>
+      <div>
+        <label>
+          Lowercase
+          <input 
+            type="checkbox"
+          />
+        </label>
+        <p>abcdefghijklmnopqrstuvwxyz</p>
+      </div>
+      
+      <div>
+        <label>
+          Uppercase
+          <input 
+            type="checkbox"
+          />
+        </label>
+        <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+      </div>
+      
+      <div>
+        <label>
+          Digits
+          <input 
+            type="checkbox"
+          />
+        </label>
+        <p>1234567890</p>
+      </div>
+      
+      <div>
+        <label>
+          Special
+          <input 
+            type="checkbox"
+          />
+        </label>
+        <p>!@#$%^&*-_=+?.</p>
+      </div>
+      
+      <div>
+        <label>
+          Grouping
+          <input 
+            type="checkbox"
+          />
+        </label>
+        <p>{'(){}[]'}</p>
+      </div>
+      
+
+    </div>
+
   </div>
 }
