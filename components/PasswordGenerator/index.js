@@ -1,147 +1,86 @@
+"use client";
+
+import { LengthInput } from "./LengthInput"
+import { SimpleMenu } from "./SimpleMenu"
+import { AdvancedMenu } from "./AdvancedMenu"
+
+import { usePasswordGenerator } from "../../hooks";
+
 import styles from "./index.module.css"
 
 export const PasswordGenerator = () => {
+
+  const {
+    password,
+    passwordConfig,
+    generate,
+    handleChange,
+    passwordLengthIncrease,
+    passwordLengthDecrease
+  } = usePasswordGenerator();
+
+  
+
   return <div
     className={styles.root}
   >
     <p>Password Generator</p>
 
-    <label>
+    <label
+      className={styles.label}
+    >
       Your new password:
       <input
         type="text"
+        readOnly
+        value={password}
       />
     </label>
 
     <div>
       <button>Copy</button>
-      <button>Generate</button>
+      <button
+        onClick={generate}
+      >Generate</button>
     </div>
 
-    <label>
-      Length:
-      <button>-</button>
-      <input
-        type="text"
-      />
-      <button>+</button>
-    
-    </label>
-
-    <input 
-      type="range"
+    <LengthInput  
+      passwordConfig={passwordConfig}
+      onChange={handleChange}
+      increase={passwordLengthIncrease}
+      decrease={passwordLengthDecrease}
     />
-  
 
     <div>
       <p>
         Settings:
       </p>
-      <label>Simple
+      <label
+        htmlFor="simple"
+      >Simple
         <input
           type="radio"
+          id="simple"
+          name="setting"
+          checked={passwordConfig.setting === "simple"}
+          onChange={handleChange}
         />
       </label>
-      <label>Advanced
+      <label
+        htmlFor="advanced"
+      >Advanced
         <input
           type="radio"
+          id="advanced"
+          name="setting"
+          checked={passwordConfig.setting === "advanced"}
+          onChange={handleChange}
         />
       </label>
     </div>
 
-    <div>
-      <div>
-        <label>
-          Less Secure
-          <input
-            type="radio"
-          />
-        </label>
-        <p>Only Letters</p>
-      </div>
-      <div>
-        <label>
-          Less Secure
-          <input
-            type="radio"
-          />
-        </label>
-        <p>Only Letters</p>
-      </div>
-      <div>
-        <label>
-          Somewhat Secure
-          <input
-            type="radio"
-          />
-        </label>
-        <p>Letters and digits</p>
-      </div>
-      <div>
-        <label>
-          More Secure
-          <input
-            type="radio"
-          />
-        </label>
-        <p>Letters, digits, special, groupings</p>
-      </div>
-
-    </div>
-
-    <div>
-      <div>
-        <label>
-          Lowercase
-          <input 
-            type="checkbox"
-          />
-        </label>
-        <p>abcdefghijklmnopqrstuvwxyz</p>
-      </div>
-      
-      <div>
-        <label>
-          Uppercase
-          <input 
-            type="checkbox"
-          />
-        </label>
-        <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
-      </div>
-      
-      <div>
-        <label>
-          Digits
-          <input 
-            type="checkbox"
-          />
-        </label>
-        <p>1234567890</p>
-      </div>
-      
-      <div>
-        <label>
-          Special
-          <input 
-            type="checkbox"
-          />
-        </label>
-        <p>!@#$%^&*-_=+?.</p>
-      </div>
-      
-      <div>
-        <label>
-          Grouping
-          <input 
-            type="checkbox"
-          />
-        </label>
-        <p>{'(){}[]'}</p>
-      </div>
-      
-
-    </div>
+    <SimpleMenu passwordConfig={passwordConfig}/>
+    <AdvancedMenu passwordConfig={passwordConfig}/>
 
   </div>
 }

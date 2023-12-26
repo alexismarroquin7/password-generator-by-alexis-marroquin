@@ -1,0 +1,9 @@
+.root {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
