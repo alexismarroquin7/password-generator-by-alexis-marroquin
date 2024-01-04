@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import clipboardCopy from "clipboard-copy";
 
 const initialPassword = "";
 
@@ -59,6 +60,14 @@ export const usePasswordGenerator = () => {
     setPassword(password);
 
     return password;
+  }
+
+  const handleCopyToClipboard = async () => {
+    try {
+      await clipboardCopy(password);
+    } catch (err) {
+      console.log('unable to copy to clipoard', err);
+    }
   }
 
   const handleChange = (e) => {
@@ -128,5 +137,6 @@ export const usePasswordGenerator = () => {
     passwordLengthIncrease,
     passwordLengthDecrease,
     updatePasswordConfig,
+    handleCopyToClipboard
   }
 }
