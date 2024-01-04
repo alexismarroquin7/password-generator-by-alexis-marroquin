@@ -17,7 +17,8 @@ export const PasswordGenerator = () => {
     handleChange,
     passwordLengthIncrease,
     passwordLengthDecrease,
-    updatePasswordConfig
+    updatePasswordConfig,
+    handleCopyToClipboard
   } = usePasswordGenerator();
 
   
@@ -39,7 +40,9 @@ export const PasswordGenerator = () => {
     </label>
 
     <div>
-      <button>Copy</button>
+      <button
+        onClick={handleCopyToClipboard}
+      >Copy</button>
       <button
         onClick={generate}
       >Generate</button>
