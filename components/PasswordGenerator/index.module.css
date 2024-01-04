@@ -1,5 +1,11 @@
 .root {
+  border: 1px solid red;
   display: flex;
   flex-flow: column wrap;
   gap: 1rem;
+}
+
+.label {
+  display: flex;
+  flex-flow: column wrap;
 }

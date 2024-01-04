@@ -6,7 +6,12 @@
 
 p,
 label,
+input,
 button {
   font-size: 1.6rem;
 }
 
+input,
+button {
+  padding: 1rem;
+}
