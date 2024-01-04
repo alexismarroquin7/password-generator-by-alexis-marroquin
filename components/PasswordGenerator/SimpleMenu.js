@@ -1,6 +1,6 @@
 import styles from "./SimpleMenu.module.css"
 
-export const SimpleMenu = ({passwordConfig, updatePasswordConfig}) => {
+export const SimpleMenu = ({ passwordConfig, updatePasswordConfig }) => {
   
   const handleChange = (e) => {
     const { id } = e.target;

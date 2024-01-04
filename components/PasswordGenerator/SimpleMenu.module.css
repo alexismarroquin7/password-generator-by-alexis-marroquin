@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   flex-flow: column wrap;
+  gap: 1rem;
 }
 
 .menu_hidden {
@@ -10,7 +11,9 @@
 
 .container {
   width: 100%;
-  border: 1px solid red;
+  background-color: #eee;
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
 .label {

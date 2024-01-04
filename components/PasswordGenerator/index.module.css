@@ -1,5 +1,4 @@
 .root {
-  border: 1px solid red;
   display: flex;
   flex-flow: column wrap;
   gap: 1rem;
@@ -8,4 +7,29 @@
 .label {
   display: flex;
   flex-flow: column wrap;
+}
+
+.settings_container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.settings_container_title {
+  width: 100%;
+}
+
+.fancy_label {
+  border: 1px solid var(--primary);
+  padding: 1rem;
+}
+
+.fancy_label_active {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.radio_input {
+  display: none;
 }

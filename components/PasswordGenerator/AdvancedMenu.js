@@ -64,7 +64,9 @@ export const AdvancedMenu = ({passwordConfig, updatePasswordConfig}) => {
             }
           />
         </label>
-        <p>abcdefghijklmnopqrstuvwxyz</p>
+        <p
+          className={styles.monotext}
+        >abcdefghijklmnopqrstuvwxyz</p>
       </div>
       
       <div
@@ -89,7 +91,9 @@ export const AdvancedMenu = ({passwordConfig, updatePasswordConfig}) => {
             }
           />
         </label>
-        <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+        <p
+          className={styles.monotext}
+        >ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
       </div>
       
       <div
@@ -114,7 +118,9 @@ export const AdvancedMenu = ({passwordConfig, updatePasswordConfig}) => {
             }
           />
         </label>
-        <p>1234567890</p>
+        <p
+          className={styles.monotext}
+        >1234567890</p>
       </div>
       
       <div
@@ -139,7 +145,9 @@ export const AdvancedMenu = ({passwordConfig, updatePasswordConfig}) => {
             }
           />
         </label>
-        <p>!@#$%^&*-_=+?.</p>
+        <p
+          className={styles.monotext}
+        >!@#$%^&*-_=+?.</p>
       </div>
       
       <div
@@ -164,7 +172,9 @@ export const AdvancedMenu = ({passwordConfig, updatePasswordConfig}) => {
             }
           />
         </label>
-        <p>{'(){}[]'}</p>
+        <p
+          className={styles.monotext}
+        >{'(){}[]'}</p>
       </div>
       
 

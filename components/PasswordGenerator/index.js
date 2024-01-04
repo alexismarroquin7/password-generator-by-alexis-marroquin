@@ -1,6 +1,7 @@
 "use client";
 
 import { LengthInput } from "./LengthInput"
+import { ActionArea } from "./ActionArea"
 import { SimpleMenu } from "./SimpleMenu"
 import { AdvancedMenu } from "./AdvancedMenu"
 
@@ -39,14 +40,10 @@ export const PasswordGenerator = () => {
       />
     </label>
 
-    <div>
-      <button
-        onClick={handleCopyToClipboard}
-      >Copy</button>
-      <button
-        onClick={generate}
-      >Generate</button>
-    </div>
+    <ActionArea 
+      handleCopyToClipboard={handleCopyToClipboard}
+      generate={generate}
+    />
 
     <LengthInput  
       passwordConfig={passwordConfig}
@@ -55,12 +52,17 @@ export const PasswordGenerator = () => {
       decrease={passwordLengthDecrease}
     />
 
-    <div>
-      <p>
+    <div
+      className={styles.settings_container}
+    >
+      <p
+        className={styles.settings_container_title}
+      >
         Settings:
       </p>
       <label
         htmlFor="simple"
+        className={`${styles.fancy_label} ${passwordConfig.setting === "simple" ? styles.fancy_label_active : ""}`}
       >Simple
         <input
           type="radio"
@@ -68,10 +70,12 @@ export const PasswordGenerator = () => {
           name="setting"
           checked={passwordConfig.setting === "simple"}
           onChange={handleChange}
+          className={styles.radio_input}
         />
       </label>
       <label
         htmlFor="advanced"
+        className={`${styles.fancy_label} ${passwordConfig.setting === "advanced" ? styles.fancy_label_active : ""}`}
       >Advanced
         <input
           type="radio"
@@ -79,6 +83,7 @@ export const PasswordGenerator = () => {
           name="setting"
           checked={passwordConfig.setting === "advanced"}
           onChange={handleChange}
+          className={styles.radio_input}
         />
       </label>
     </div>

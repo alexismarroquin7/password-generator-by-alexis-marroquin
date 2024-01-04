@@ -7,6 +7,7 @@ export const LengthInput = ({passwordConfig, onChange, decrease, increase}) => {
   >
     <label
       htmlFor="length"
+      className={styles.label}
     >
       Length:
     </label>
@@ -33,8 +34,9 @@ export const LengthInput = ({passwordConfig, onChange, decrease, increase}) => {
         }}
       >+</button>
     </div>
-
+    
     <input 
+      className={styles.range}
       type="range"
       min={passwordConfig.passwordLengthMin}
       max={passwordConfig.passwordLengthMax}
@@ -43,6 +45,7 @@ export const LengthInput = ({passwordConfig, onChange, decrease, increase}) => {
       name="passwordLengthRange"
       value={passwordConfig.passwordLength}
     />
+
   </div>
   )
 }
