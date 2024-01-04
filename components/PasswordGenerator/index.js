@@ -16,7 +16,8 @@ export const PasswordGenerator = () => {
     generate,
     handleChange,
     passwordLengthIncrease,
-    passwordLengthDecrease
+    passwordLengthDecrease,
+    updatePasswordConfig
   } = usePasswordGenerator();
 
   
@@ -79,8 +80,14 @@ export const PasswordGenerator = () => {
       </label>
     </div>
 
-    <SimpleMenu passwordConfig={passwordConfig}/>
-    <AdvancedMenu passwordConfig={passwordConfig}/>
+    <SimpleMenu 
+      passwordConfig={passwordConfig}
+      updatePasswordConfig={updatePasswordConfig}
+    />
+    <AdvancedMenu 
+      passwordConfig={passwordConfig}
+      updatePasswordConfig={updatePasswordConfig}
+    />
 
   </div>
 }

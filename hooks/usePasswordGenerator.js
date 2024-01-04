@@ -8,7 +8,8 @@ const initialPasswordConfig = {
   passwordLength: 8,
   lowercase: true,
   uppercase: true,
-  special: true,
+  digits: true,
+  special: false,
   grouping: false,
   setting: "simple"
 }
@@ -97,6 +98,13 @@ export const usePasswordGenerator = () => {
     })
   }
 
+  const updatePasswordConfig = (changes) => {
+    setPasswordConfig({
+      ...passwordConfig,
+      ...changes
+    })
+  }
+
   useEffect(() => {
     generate()
   }, [])
@@ -119,5 +127,6 @@ export const usePasswordGenerator = () => {
     handleChange,
     passwordLengthIncrease,
     passwordLengthDecrease,
+    updatePasswordConfig,
   }
 }
